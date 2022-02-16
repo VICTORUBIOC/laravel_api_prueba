@@ -76,12 +76,23 @@ crear el .env en base al .env.copy
     laravelsail/php80-composer:latest \
     composer install --ignore-platform-reqs
 
-./vendor/bin/sail composer update
-
 ## Otorgar permisos a la aplicación
 sudo chmod -R 777 storage && sudo chmod -R 777 bootstrap/cache
 
-## Crear el esquema marcablanca
-Se puede realizar desde phpmyadmin en localhost:8082
+## Levantar el contenedor docker con el siguiente comando
+./vendor/bin/sail up -d
+
+## Correr las migraciones
+./vendor/bin/sailphp artisan migrate
+
+## Usar el API
+localhost:8081
 
 
+
+
+
+
+
+sail composer require fruitcake/laravel-cors
+php artisan vendor:publish 
