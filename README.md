@@ -62,3 +62,26 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+### Istalación del proyecto
+
+crear el .env en base al .env.copy
+## Comando para obtener vendor
+
+ docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/opt \
+    -w /opt \
+    laravelsail/php80-composer:latest \
+    composer install --ignore-platform-reqs
+
+./vendor/bin/sail composer update
+
+## Otorgar permisos a la aplicación
+sudo chmod -R 777 storage && sudo chmod -R 777 bootstrap/cache
+
+## Crear el esquema marcablanca
+Se puede realizar desde phpmyadmin en localhost:8082
+
+
